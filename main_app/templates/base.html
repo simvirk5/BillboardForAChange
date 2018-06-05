@@ -1,14 +1,48 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Billboard for a Change</title>
+	<title>Billboard for Change</title>
+	
+  	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+
 </head>
 <body>
-	<h1>Billboard for a Change</h1>
-	{% for artwork in artwork %}
-	<p>Title: {{ artwork.title }}</p>
-		<p>
-	<hr />
-	<footer>All Rights Reserved, Billboards For A Change 2018</footer>
+	<nav class="nav-center">
+		<!-- <div class="navbar-fixed"> -->
+	<div class = 'nav-wrapper center-align'>
+		<ul id="nav-mobile" class="center-align">
+		{% if user.is_authenticated %}
+			<li><a href="{% url 'profile' %}" class="header">Hello, {{ user.username }}!</a></li>
+			<li><a href="{% url 'logout' %}" class="header">Logout</a></li>
+			<li><a href="{% url 'index' %}" class="header">Home</a></li>
+		{% else %}
+			<li><a href="{% url 'login' %}" class="header">Login</a></li>
+			<li><a href="{% url 'signup' %}" class="header">Sign Up</a></li>
+		{% endif %}
+		</ul>
+	<!-- </div> -->
+</div>
+</nav>
+	<div>
+		{% block content %}
+		{% endblock %}
+	</div>
+
+	<hr>
+	<footer>All Rights Reserved, BillboardsForChange 2018</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+	<script src="{% static 'app.js' %}"></script>
 </body>
 </html>
