@@ -1,0 +1,18 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Billboard for a Change</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+<body>
+	<h1>Billboard for a Change</h1>
+	{% for artwork in artwork %}
+		<p>Title: {{ artwork.title }}</p>
+			<p>Description: {{ artwork.description }}</p>
+
+	<hr />
+	{% endfor %}
+	<footer>All Rights Reserved, Billboards For A Change 2018</footer>
+</body>
+</html>
