@@ -2,24 +2,20 @@ body {
 	font-family: 'Raleway', sans-serif;
 }
 .header-pic {
-	background-image: url('https://girdley.com/content/images/2017/07/mcdonalds-billboard.jpg');
+	background-image: url("https://thumbs.dreamstime.com/z/billboard-city-draw-graphic-design-illustration-51722348.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 400px;
-	        position: relative;
-
-
+	position: relative;
 }
-
-
 #title {
    width: 100%; 
    text-align: center; 
    border-bottom: 1px solid #000; 
    line-height: 0.1em;
-margin: auto;
-z-index: -1	;
-margin-top: 210px;
+   margin: auto;
+   z-index: -1;
+   margin-top: 210px;
 } 
 
 #title>span { 
@@ -30,8 +26,8 @@ margin-top: 210px;
 	font-weight: bold;
 }
 .layer {
-		    background-color: rgba(164, 150, 136, 0.7);
-		     position: absolute;
+	background-color: rgba(164, 150, 136, 0.7);
+	position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -39,76 +35,62 @@ margin-top: 210px;
 
 }
 nav.nav-center ul {
-    text-align: center !important;
+    text-align: center;
     color: yellow;
     background-color: black;
 
 }
 nav.nav-center ul li {
-    display: inline !important;
-    float: none !important;
+    display: inline;
+    float: none;
 }
 nav.nav-center ul li a {
-    display: inline-block !important;
+    display: inline-block;
 }
 nav {
 	color: !important black;
 }
 
-.index-row {
+.home-page-row{
 	height: 100vh !important;
-	
-	
-	/*background-color: purple;*/
-
 }
 
 .main-home-div {
-	position: absolute;
+	/*position: absolute;*/
 	z-index: 100;
 	opacity: 0.9;
-	/*background-color: blue;*/
-	/*width: !important 100vw;*/
 }
 
 .about-text {
-	/*font-weight: 600 !important;*/
 	font-size: 9em;
 	z-index: 100;
-	/*margin-left: 2%;*/
 	font-size: 60px;
 	margin-top: 100px;
 	position: relative;
-	/*background-color:pink;*/
 	width: 100vw !important;
 	height: 100vh !important;
-		font-family: 'Raleway', sans-serif;
-		/*border: 1px solid black;*/
-		color: !important rgba(0,0,0,0.87);
+	font-family: 'Raleway', sans-serif;
+	color: rgba(0,0,0,0.87);
+	border-left: 2px solid black;
 }
 .background-layer{
-	/*background-color: black;*/
 	margin: !important auto;
 }
 
 .about-span {
-	margin-top: !important -100px;
+	margin-top: -100px;
 }
 .how-it-works-text {
-	font-weight: 500 !important;
+	font-weight: 500 ;
 	font-size: 70px;
 	color: rgba(0,0,0,0.87)
-
-	background-image: url('')
-	/*margin-right: 2%;*/
 	margin: auto;
 	height: 100vh !important ;
-
 	color: black;
-		font-family: 'Raleway', sans-serif;
-		/*background-color: yellow;	*/
-
+	font-family: 'Raleway', sans-serif;
+		/*background-image: url("https://s3.envato.com/files/242442602/preview-image.jpg");*/
 }
+
 
 html {
 	color: rgba(0,0,0,0.87);
@@ -119,8 +101,136 @@ html {
 	margin-top: -700px;
 	font-size: 40px;
 	margin-right: -50px;
+
 }
-.special {
-	color: !important #39465b;
+/*.special {
+	color: !important pink;
+}*/
+.main-home-div {
+
+	/*background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKUXgkBAnoB6H9mZZgtFh_VsTYRazUIC8lykilgr6E0UcrPPdh");*/
+	background-size: cover;
+	background-repeat: no-repeat;
+
 }
 
+.col .m6 .right-align {
+}
+
+.btn, .btn-large, .btn-small {
+	background-color: grey;
+}
+p{
+	color: transparent;
+}
+.card .card-title {
+    background-color: yellow;
+    position: center;
+}
+.card {	
+	opacity: 0.5;
+}
+.card-image-one {
+	background-image: url("https://i.pinimg.com/originals/7a/a6/f0/7aa6f0f0d9dcec556c715333eea7a592.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+
+}
+.card-image-two {
+	background-image: url('http://4.bp.blogspot.com/-Mdw_IaNL3Ww/UEt_tK6LdDI/AAAAAAAAACY/kLQOl_xEjRc/s640/banksy-boston.jpeg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.card-image-three {
+	background-image: url('https://www.artmajeur.com/medias/standard/t/e/tehos/artwork/10163752_p1650319s3.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.card-image-four {
+	background-image: url('https://www.thequench.com/wp-content/uploads/2016/01/Girl-Power-Featured-Photo.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.card-image-five {
+	background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnKW4siso2E5Np81wMvdRzZ6DruUAIgdqJGTl_TCDvGoBZZ_erRg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.card-image-six {
+	background-image: url("https://i.pinimg.com/originals/4b/70/18/4b701890556fcdc3b1fb05eed3f5282b.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+}
+.card-image-seven {
+	background-image: url("https://www.brainyquote.com/photos_tr/en/b/bobmarley/109299/bobmarley1.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.card-image-eight {
+	background-image: url('https://i.pinimg.com/originals/bd/85/3c/bd853cd465d82a46daaa6b09c7bd9436.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.artwork-img {
+	width: 350px;
+	height: 200px;
+}
+.table {
+     display: table;
+     width: 100%;
+     border-style: 2px solid black;
+     text-align: center;
+}
+.user {
+	border: 2px solid black;
+}
+
+/*.active {
+	text-align: center;
+}*/
+
+.artwork-card-display {
+	/*width: 700px;*/
+	opacity: !important none;	
+}
+
+h4 .smaller-homepage-text {
+	font-size: !important 10px;
+	background-color: !important pink;
+}
+
+h6 {
+	    margin-left: 35%;
+	    font-weight: bold;
+	    font-size: 20px;
+}
+nav ul a:hover {
+	color: red;
+}
+/*.tabs .tab a{
+	color: red;
+	font-weight: bold;
+}*/
+.tabs {
+	color: red;
+	font-weight: bold;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+.displayed-art {
+	size: ;
+}
+/*.art-title-div {
+	background-color: grey;
+}*/
+/*.table {
+	background-color: grey;
+}*/

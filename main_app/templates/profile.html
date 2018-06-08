@@ -1,19 +1,252 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
-<
-<h1>{{ user.username }}'s collections:</h1>
-{% for artwork in artworks %}
-	<a href="/{{ artwork.id }}">
-		<h3>{{ artwork.title }}</h3>
-		<h4>{{ artwork.category }}</h4>
-	</a>
-{% endfor %}
 
-<h2>Categories</h2>
+
+ <div class="row">
+    <div class="col s6 m3">
+      <div class="card">
+        <div class="card-image-one">
+          <span class="card-title">Happy</span>
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+       
+      </div>
+  </div>
+      <div class="col s6 m3">
+      <div class="card ">
+        <div class="card-image-two">
+          <span class="card-title">Sarcasm</span>
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+       
+      </div>
+  </div>
+   <div class="col s6 m3">
+      <div class="card">
+        <div class="card-image-three">
+          <span class="card-title">Poltical</span>
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+       
+      </div>
+    </div>
+
+       <div class="col s6 m3">
+      <div class="card">
+        <div class="card-image-four">
+          <span class="card-title">Inspirational</span>
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+       
+      </div>
+    </div>
+
+       <div class="col s6 m3">
+      <div class="card">
+        <div class="card-image-five">
+          <span class="card-title">Peace</span>
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+       
+      </div>
+    </div>
+
+           <div class="col s6 m3">
+      <div class="card">
+        <div class="card-image-six">
+          <span class="card-title">Funny</span>
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+       
+      </div>
+    </div>
+
+           <div class="col s6 m3">
+      <div class="card">
+        <div class="card-image-seven">
+          <span class="card-title">Music</span>
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+       
+      </div>
+    </div>
+
+           <div class="col s6 m3">
+      <div class="card">
+        <div class="card-image-eight">
+          <span class="card-title">Outdoors</span>
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
+        </div>
+       
+      </div>
+    </div>
+
+   </div>
+  <h6 style= "{background-color: red; margin-right: -200px;}">| These our the featured billboards for this month | </h6>
+  <hr>
+<!-- end of card panels -->
+
+<!-- 
+<div class=container>
+  <div class="row">
+    
+  <div class="user"><h3>{{ user.username }}'s artwork:</h3></div>
+            {% for artwork in artwork %} 
+  <div class="col m6">          
+ <div class="card center artwork-card-display">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="{{ artwork.image}}">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Information<i class="material-icons right">more_vert</i></span>
+
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+      <p>Description: {{ artwork.description }}</p>
+    </div>
+  </div>
+
+</div>
+   {% endfor %}
+</div>
+</div> -->
+
+
+
+
+
+    <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s6"><a class = "active" href="#test1">Saved Artwork</a></li>
+        <li class="tab col s6"><a href="#test2">Create Artwork</a></li>
+      </ul>
+    </div>
+
+<div class="row">
+  <div class="col s12">
+    <div id="test1" class="col s12">
+      <!-- saved artwork from db -->
+        <div class="container">
+          <div class="table">
+            <!-- <div class="user"><h4>{{ user.username }}'s artwork:</h4></div> -->
+            {% for artwork in artwork %}  
+              <!-- <a href="/{{ artwork.id }}"> -->
+                <div class = 'col s6 displayed-art'>
+                <div class="art-title-div"><h5><span style="font-weight: bold">Title: </span>{{ artwork.title }}</h5></div>
+                <div class="art-cat-div"><h5><span style="font-weight: bold">Category: </span>{{ artwork.category }}</h5></div>
+                <div class="art_descrip-div"><h5><span style="font-weight: bold">Description: </span>{{ artwork.description }}</h5></div>
+                <div class="art-img-div"><img src="{{artwork.image}}" class="artwork-img"></div>
+
+                   <a href="/profile/{{artwork.id}}" class="waves-effect waves-light btn">delete</a>
+              </div>
+            {% endfor %}
+
+            </div>
+          </div>
+          </div>
+        </div>
+        <!-- end of saved artwork -->
+  </div>
+</div>
+
+    <div class="container">
+    <div id="test2" class="col s12">
+      
+<!-- artwork form -->
+<div class= 'container'>
+
+    <form method="post" action="/post_artwork/">
+      {% csrf_token %}
+      
+   
+    
+      <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="text"  name="title" class="validate" placeholder="What's the title of your artwork?">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="text"  name="description" class="validate" placeholder="Write a short description of what it is...">
+        </div>
+      </div>
+       
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea2" name="inspiration" class="materialize-textarea" data-length="120"></textarea>
+          <label for="textarea2">What's the inspiration behind your art? (Optional)</label>
+
+        </div>
+      </div>
+
+
+    <div class="file-field input-field">
+      <label>File URL:</label>
+      <input name="image" type="url">
+    </div>
+
+
+    <div class="input-field col s12">
+    <select name="dropdown">
+      <option value="" disabled selected>Choose your category</option>
+      <option value="funny">Funny</option>
+      <option value="sarcasm">Sarcasm</option>
+      <option value="political">Political</option>
+      <option value="peace">Peace</option>
+      <option value="hope">Hope</option>
+      <option value="happy">Happy</option>
+      <option value="outdoors">Outdoors</option>
+      <option value="music">Music</option>
+    </select>
+    <!-- <label>Materialize Select</label> -->
+  </div>
+         
+<!--     <select name=" {{ form.artwork.category.category_text }}">
+      {% for field in form.artwork.category %}
+      <option value= "{{ field }}"></option>
+      {% endfor %}
+    </select> -->
+   <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+
+    <!-- <input type="submit" value="Submit"/> -->
+    
+
+
+    
+
+      <a href="{% url 'profile' %}">Nevermind</a>
+  <br>
+    </form>
+  </form>
+
+</div>
+<!-- end of artwork form -->
+    </div>
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}
+
+<!-- <h2>Categories</h2>
 <ul>
 {% for cat in categories %}
-	<li>{{ cat.name }}</li>
+  <li>{{ cat.name }}</li>
 {% endfor %}
-</ul>
-{% endblock %}
+</ul> -->

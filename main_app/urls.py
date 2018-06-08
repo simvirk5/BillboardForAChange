@@ -7,6 +7,13 @@ urlpatterns = [
 	path('logout/', views.logout_view, name="logout"),
 	path('signup/', views.signup, name='signup'),
 	path('profile/', views.profile, name='profile'),
+	path('test/', views.test, name="test"),
+	# path('profile/', views.ArtworkCreate.as_view(), name="profile"),
+	path('post_artwork/', views.post_artwork, name='post_artwork'),
+	path('search_artwork/', views.search, name='search'),
+	path('search/', views.search, name="search"),
+	path('profile/<int:artwork_id>/', views.delete, name='delete'),
+
 	# path('search/', views.search, name='search'),
 
 ]

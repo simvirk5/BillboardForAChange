@@ -21,12 +21,16 @@
 	<div class = 'nav-wrapper center-align'>
 		<ul id="nav-mobile" class="center-align">
 		{% if user.is_authenticated %}
-			<li><a href="{% url 'profile' %}" class="header">Hello, {{ user.username }}!</a></li>
+			<li><a href="{% url 'profile' %}" class="header">Profile</a></li>
 			<li><a href="{% url 'logout' %}" class="header">Logout</a></li>
 			<li><a href="{% url 'index' %}" class="header">Home</a></li>
+			<li><a href="{% url 'search' %}" class="header">Search</a></li>  
+
 		{% else %}
 			<li><a href="{% url 'login' %}" class="header">Login</a></li>
 			<li><a href="{% url 'signup' %}" class="header">Sign Up</a></li>
+			<li><a href="{% url 'index' %}" class="header">Home</a></li>
+
 		{% endif %}
 		</ul>
 	<!-- </div> -->
@@ -37,8 +41,8 @@
 		{% endblock %}
 	</div>
 
-	<hr>
-	<footer>All Rights Reserved, BillboardsForChange 2018</footer>
+	<!-- <hr> -->
+	<footer class="footer">All Rights Reserved, BillboardsForChange 2018</footer>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>

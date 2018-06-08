@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import Artwork, Category
+from .models import Artwork
 # Register your models here.
-admin.site.register([Artwork,Category])
+admin.site.register([Artwork])

@@ -1,7 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
+# from cloudinary.models import CloudinaryField
 
-class Category(models.Model):
+
+# class Photo(models.Model):
+# 	image = CloudinaryField('image')
+
+# class Category(models.Model):
 	# CATEGORY_TEXT_CHOICES = (
 	# 		('funny', 'Funny'),
 	# 		('inspirational', 'Inspirational'),
@@ -16,19 +21,21 @@ class Category(models.Model):
 	# 	)
 	# category_text = models.CharField(max_length=100, choices=CATEGORY_TEXT_CHOICES)
 	# artist = models.ForeignKey(User, on_delete=models.CASCADE)
-	name = models.CharField(max_length=100, default='')
+	# name = models.CharField(max_length=100, default='')
 
-	def __str__(self):
-		return self.name
+	# def __str__(self):
+	# 	return self.name
 
 class Artwork(models.Model):
 	title = models.CharField(max_length=100)
 	description = models.TextField()
-	inspiration = models.TextField(blank=True)
-	category = models.ForeignKey(Category, on_delete=models.CASCADE)
+	inspiration = models.TextField()
+	category = models.CharField(max_length=100)
 	artist = models.ForeignKey(User, on_delete=models.CASCADE) 
-	image = models.ImageField(upload_to='items/%Y/%m/%d', blank=True)
-	
+	image = models.CharField(max_length=1000)
+
+
+
 	def __str__(self):
 		return self.title
 

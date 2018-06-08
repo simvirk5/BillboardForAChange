@@ -1,10 +1,52 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <form method="get">
-    {{ filter.form.as_p }}
-    <button type="submit">Search</button>
-  </form>
+<!-- <div class="container">
+<div class='row col s12 m5 l5 '> -->
+<div class="container">
+<form method="post" action="/search_artwork/">
+	{% csrf_token %}
+	<select name='selectionbox' class="browser-default selectionbox col s12 m5 l5 z-depth-3">
+		<option value="null" selected>Search by categories</option>
+		<option value="funny">Funny</option>
+		<option value="inspirational">Inspirational</option>
+		<option value="political">Political</option>
+		<option value="sarcasm">Sarcasm</option>
+		<option value="hope">Hope</option>
+		<option value="peace">Peace</option>
+		<option value="outdoors">Outdoors</option>
+		<option value="happy">Happy</option>
+		<option value="Music">Music</option>
+		<option value="happy">Happy</option>
+	</select><br>
+			<input class="btn medium" type="submit" name="action"></input>
+</form>
+<h4>Here's the artwork you requested: </h4>
+<div class="row">
+	<div class="col s12">
+		<div class="container">
+			<div class="table">
 
+{% for art in artwork %}
+<div class="col s6 displayed-art">
+	<div class="art-title-div"><h5><span style="font-weight: bold">Title: </span>{{ art.title }}</h5></div>
+		<div class="art-description-div"><h5><span style="font-weight: bold">Description: </span>{{ art.description}}</h5></div>
+		<div class="art-inspiration-div"><h5><span style="font-weight: bold">Inspiration: </span>{{ art.inspiration}}</h5></div>
+		<img class= 'artwork-img' src="{{ art.image }}">
+
+	</div>
+{% endfor %}
+</div>
+</div>
+</div>
+</div>
+</div>
 {% endblock %}
 
+
+
+
+ <!--  <form method="get">
+    {{ filter.form.as_p }}
+    <button type="submit">Search</button>
+  </form> -->
