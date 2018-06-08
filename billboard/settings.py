@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-
+import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -25,7 +25,7 @@ SECRET_KEY = 'u7esdcg&$nwy-%o$h^s&d+^qi3ys7n)o0(^(a^27a(ew1n#lc='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["billboardforchange.herokuapp.com", 'localhost']
 
 
 # Application definition
@@ -75,14 +75,15 @@ WSGI_APPLICATION = 'billboard.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': ('billboard')
-    }
-}
-
-
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': ('billboard')
+#     }
+# }
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(
+    default='postgres://tczrledtyxcdsz:cf9820c4d0ad712b1cb14b591d644cf02bca6d316fa2b4e740cf663528c3210a@ec2-54-204-18-53.compute-1.amazonaws.com:5432/d807d2vqv91ocj')
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
