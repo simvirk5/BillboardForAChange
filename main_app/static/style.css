@@ -50,10 +50,7 @@ nav.nav-center ul li a {
 nav {
 	color: !important black;
 }
-.nav-center {
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
+
 .home-page-row{
 	height: 100vh !important;
 }
